@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('profile_user', function (Blueprint $table) {
-            $table->id();
+            // 0 in second param represents auto increment
+            $table->unsignedBigInteger('profile_id', false);
+            $table->unsignedBigInteger('user_id', false);
             $table->timestamps();
         });
     }

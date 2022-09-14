@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('post_user', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('post_id', false);
+            $table->unsignedBigInteger('user_id', false);
+            $table->text('comment')->nullable();
+            $table->tinyInteger('is_liked')->default('0');
             $table->timestamps();
         });
     }
