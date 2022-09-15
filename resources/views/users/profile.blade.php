@@ -5,13 +5,12 @@
     <div class="row">
         <div class="col-3 p-5">
             {{-- We must add the port number to the env file for Storage to work properly--}}
-            <img src="{{Storage::disk('public')->url($user->profile->image)}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
-
             @php
                 $image_path = Storage::disk('public')->url($user->profile->image);
                 // dd($image_path);
                 $default_image_path = url('/svg/default_profile_image.jpg');
             @endphp
+
             @if (file_exists($image_path))
                 <img src="{{$image_path}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
             @else
@@ -24,7 +23,7 @@
             <div class="d-flex">
                 <h1>{{ $user->username}}</h1>
 
-                <button class="btn btn-primary  ms-4">Follow</button>
+                <button class="btn btn-primary  ms-4" style = "max-height: 35px;">Follow</button>
             </div>
             <div class="d-flex">
 
