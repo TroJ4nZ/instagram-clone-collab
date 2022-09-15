@@ -22,7 +22,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                 <div><img src="/svg/Instagramlogo.svg" style="height: 25px ; border-right:1px solid #333333 ;" class="pe-3"></div>
-                <div class="ps-3">Instagram</div> 
+                <div class="ps-3">Instagram</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
