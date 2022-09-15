@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <form action="/users/{{$user->id}}" enctype="multipart/form-data" method="post">
+    <form action="{{route('profile.update')}}" enctype="multipart/form-data" method="post">
 
         @csrf
-        @method('PATCH')
+        @method('PUT')
 
         <div class="row">
             <div class="col-8 offset-2">
@@ -14,7 +14,7 @@
                     <h1>Edit Your Profile</h1>
                 </div>
                 <div class="form-group row">
-                    <label for="title" class="col-md-4 col-form-label">Title</label>
+                    <label for="title" class="col-md-4 col-form-label">Profile Title</label>
 
                     <input id="title"
                            type="text"
@@ -30,7 +30,7 @@
                     @endif
                 </div>
                 <div class="form-group row">
-                    <label for="description" class="col-md-4 col-form-label">description</label>
+                    <label for="description" class="col-md-4 col-form-label">Bio</label>
 
                     <input id="description"
                            type="text"
@@ -47,10 +47,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="url" class="col-md-4 col-form-label">url</label>
+                    <label for="url" class="col-md-4 col-form-label">Website</label>
 
                     <input id="url"
-                           type="url"
+                           type="text"
                            class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}"
                            name="url"
                            value="{{ old('url')?? $user->profile->url }}"
@@ -65,7 +65,7 @@
 
 
                 <div class="row">
-                    <label for="image" class="col-md-4 col-form-label">profile Image</label>
+                    <label for="image" class="col-md-4 col-form-label">Profile Image</label>
 
                     <input type="file" class="form-control-file" id="image" name="image">
 
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="row pt-4">
-                    <button class="btn btn-primary">Save Changes </button>
+                    <button type=submit class="btn btn-primary">Save Changes</button>
                 </div>
 
             </div>

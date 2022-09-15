@@ -30,6 +30,7 @@ Auth::routes();
 
 Route::get('users/profile/', [UserController::class, 'profile'])->middleware('auth')->name('users.profile');
 Route::get('users/profile/edit', [UserController::class, 'edit'])->middleware('auth')->name('profile.edit');
+Route::put('users/profile/', [UserController::class, 'update'])->middleware('auth')->name('profile.update');
 
 
 Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');

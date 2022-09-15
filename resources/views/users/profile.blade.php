@@ -1,10 +1,12 @@
 @extends('layouts.app')
-
+@php
+    // dd(Storage::disk('public')->url($user->profile->image));
+@endphp
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="/svg/avatar.jpg" class="rounded-circle" style="height: 250px;">
+            <img src="{{Storage::disk('public')->url($user->profile->image)}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
 
 
 
@@ -20,9 +22,9 @@
                 <div class="pe-5"><strong>300</strong> Following</div>
             </div>
 
-            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
-            <div> {{ $user->profile->bio }}</div>
-            <div><a href="#">{{ $user->profile->website }}</a></div>
+            <div class="pt-4 font-weight-bold" style="font-weight:bold;">{{ $user->profile->title }}</div>
+            <div> {{ $user->profile->description }}</div>
+            <div><a href="#">{{ $user->profile->url }}</a></div>
 
 
             <div class="d-flex p-4">
