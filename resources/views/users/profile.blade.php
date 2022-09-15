@@ -10,7 +10,7 @@
                 $default_image_path = url('/svg/default_profile_image.jpg');
             @endphp
 
-            @if (str_contains($image_path, '.jpg'))
+            @if (str_contains($image_path, '.'))
                 <img src="{{$image_path}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
             @else
                 <img src="{{$default_image_path}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
