@@ -14,10 +14,9 @@ Please ensure that the following is installed before continuing:
 -php 8+/xampp
 -composer for php
 -node.js (16+) and npm
--Breeze authenticator package
 ```
  
--Clone the repo: https://github.com/TroJ4nZ/instagram-clone-collab and ensure that the directory of the project resides in xampp/htdocs
+-Clone the repo: https://github.com/TroJ4nZ/instagram-clone-collab and **ensure that the directory of the project resides in xampp/htdocs**
 
 in VS Code terminal run
 ```bash
@@ -32,7 +31,7 @@ composer update
 
 Run database migrations in terminal
 ```
-php artisan migrate
+php artisan migrate:refresh
 ```
 Run the server command in the terminal
 ```
