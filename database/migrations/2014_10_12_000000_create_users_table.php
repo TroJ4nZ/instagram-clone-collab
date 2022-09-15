@@ -20,10 +20,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('phone')->unique();
             $table->string('password');
-            // $table->string('photo')->nullable();
-            // $table->text('bio')->nullable();
             $table->string('gender')->nullable();
-            // $table->string('url')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
