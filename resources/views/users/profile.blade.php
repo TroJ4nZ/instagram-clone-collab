@@ -7,11 +7,10 @@
             {{-- We must add the port number to the env file for Storage to work properly--}}
             @php
                 $image_path = Storage::disk('public')->url($user->profile->image);
-                // dd($image_path);
                 $default_image_path = url('/svg/default_profile_image.jpg');
             @endphp
 
-            @if (file_exists($image_path))
+            @if (str_contains($image_path, '.jpg'))
                 <img src="{{$image_path}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
             @else
                 <img src="{{$default_image_path}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
