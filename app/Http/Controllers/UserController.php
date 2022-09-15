@@ -4,21 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-
-class ProfileController extends Controller
+class UserController extends Controller
 {
-    public function index($user)
+    public function profile()
     {
-        $user = User::find($user);
+        // $user = User::find($user);
 
-        return view('home', [
-            'user' => $user,
-        ]);
+        return view('users/profile')->with(['user' => Auth::user()]);
     }
 
     public function edit(User $user){
-        return view('profile.edit',compact('user'));
+        return view('users.edit',compact('user'));
     }
 
     public function update(User $user){

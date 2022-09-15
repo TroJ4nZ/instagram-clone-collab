@@ -67,7 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+        // Must also create a new user profile alongside the user creation to avoid null bug
         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
