@@ -16,4 +16,23 @@ class ProfileController extends Controller
             'user' => $user,
         ]);
     }
+
+    public function edit(User $user){
+        return view('profile.edit',compact('user'));
+    }
+
+    public function update(User $user){
+        $data=request()->validate([
+            'title'=>'',
+            'description'=>'',
+            'url'=>'',
+            'image'=>'',
+
+        ]);
+        $user->progile->update($data);
+
+        return redirect("/profile/{ $users->id}");
+    }
+
+
 }

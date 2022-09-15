@@ -21,7 +21,7 @@
                            type="text"
                            class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}"
                            name="title"
-                           value="{{ old('title') }}"
+                           value="{{ old('title') ?? $user->profile->title }}"
                            autocomplete="title" autofocus>
 
                     @if ($errors->has('title'))
@@ -37,7 +37,7 @@
                            type="text"
                            class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
                            name="description"
-                           value="{{ old('description') }}"
+                           value="{{ old('description')?? $user->profile->description }}"
                            autocomplete="description" autofocus>
 
                     @if ($errors->has('description'))
@@ -54,7 +54,7 @@
                            type="url"
                            class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}"
                            name="url"
-                           value="{{ old('url') }}"
+                           value="{{ old('url')?? $user->profile->url }}"
                            autocomplete="url" autofocus>
 
                     @if ($errors->has('url'))
