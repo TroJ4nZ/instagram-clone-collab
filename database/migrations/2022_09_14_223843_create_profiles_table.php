@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title')->default("No Title..");
             $table->text('description')->default("No Bio..");
             $table->string('url')->default("");
-            $table->string('avatar')->default("");
+            $table->string('image')->default("");
             $table->timestamps();
 
             $table->index('user_id');

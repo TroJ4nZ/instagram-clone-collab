@@ -9,7 +9,7 @@ class Profile extends Model
 {
 
     protected $fillable = [
-        'avatar',
+        'image',
         'description',
         'url',
         'title',
