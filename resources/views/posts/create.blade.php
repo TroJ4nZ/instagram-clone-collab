@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <form action="/posts" enctype="multipart/form-data" method="post">
+    <form action={{ route('posts.store')}} enctype="multipart/form-data" method="post">
         @csrf
-
+        @method('POST')
         <div class="row">
             <div class="col-8 offset-2">
 

@@ -12,8 +12,14 @@ class UserController extends Controller
     public function profile()
     {
         // $user = User::find($user);
-
-        return view('users.profile')->with(['user' => Auth::user()]);
+        $user = Auth::user(); // fetch logged in user
+        $posts = $user->posts; // get all posts
+        $postImages = null;
+        foreach ($posts as $post) {
+            // for each fetched post, get the images that correspond to the post
+            $postImages = $post->postImages;
+        }
+        return view('users.profile')->with(['user' => $user, 'postImages' => $postImages]);
     }
 
     public function edit(User $user)

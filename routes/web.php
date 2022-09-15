@@ -33,6 +33,5 @@ Route::get('users/profile/edit', [UserController::class, 'edit'])->middleware('a
 Route::put('users/profile/', [UserController::class, 'update'])->middleware('auth')->name('profile.update');
 
 
-Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::post('posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('posts/create', [PostController::class, 'create'])->middleware('auth')->name('posts.create');
+Route::post('posts', [PostController::class, 'store'])->middleware('auth')->name('posts.store');

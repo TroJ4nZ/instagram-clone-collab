@@ -62,6 +62,11 @@
         </div>
 
         <div class="row pt-4">
+            @foreach ($postImages as $image)
+            <div class="col-4">
+                <img src={{Storage::disk('public')->url($image->path)}} style="height: 450px; width: 400px;">
+            </div>
+            @endforeach
             <div class="col-4">
                 <img src="/svg/img3.jpeg" style="height: 450px; width: 400px;">
             </div>

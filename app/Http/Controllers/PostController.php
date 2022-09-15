@@ -6,6 +6,7 @@ use  App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -46,17 +47,21 @@ class PostController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        $imagePath = request('image')->store('uploads', 'public');
+        $imagePath = request('image')->store('post_images', 'public');
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-        $image->save();
+        // $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        // $image->save();
 
-        auth()->user()->posts()->create([
+        $user = Auth::user();
+        $newPost = $user->posts()->create([
             'caption' => $data['caption'],
-            'image' => $imagePath,
         ]);
 
-        return redirect('/users/profile/' . auth()->user()->id);
+        $newPost->PostImages()->create([
+            'path' => $imagePath,
+        ]);
+
+        return redirect()->route('users.profile');
     }
 
     /**
