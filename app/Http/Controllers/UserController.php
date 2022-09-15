@@ -19,7 +19,8 @@ class UserController extends Controller
         return view('users.edit')->with(['user' => Auth::user()]);
     }
 
-    public function update(User $user){
+    public function update(User $user, ){
+
         $data=request()->validate([
             'title'=>'',
             'description'=>'',
