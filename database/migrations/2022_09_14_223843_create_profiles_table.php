@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title')->default("No Title..");
             $table->text('bio')->default("No Bio..");
-            $table->string('website')->default("");
+            $table->string('url')->default("");
             $table->string('avatar')->default("");
             $table->timestamps();
 
