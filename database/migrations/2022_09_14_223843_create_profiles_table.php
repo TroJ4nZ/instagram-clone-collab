@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->string('avatar')->nullable();
             $table->timestamps();
+
             $table->index('user_id');
         });
     }

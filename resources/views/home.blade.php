@@ -20,13 +20,17 @@
                 <div class="pe-5"><strong>300</strong> Following</div>
             </div>
 
-            <div class="pt-4"><strong> moment you give up,is the moment you let someone else win</strong></div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div> {{ $user->profile->bio }}</div>
+            <div><a href="#">{{ $user->profile->website }}</a></div>
+
+            <!-- <div class="pt-4"><strong> moment you give up,is the moment you let someone else win</strong></div>
             <div>EX-EGC🏫 🎓</div>
             <div>Fencer🤺</div>
             <div>Computer science 💻</div>
             <div>
                 #Pisces♓23/2
-            </div>
+            </div> -->
 
 
 
