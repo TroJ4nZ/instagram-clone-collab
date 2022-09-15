@@ -17,7 +17,7 @@ Please ensure that the following is installed before continuing:
 -Breeze authenticator package
 ```
  
--Clone the repo: https://github.com/TroJ4nZ/instagram-clone-collab
+-Clone the repo: https://github.com/TroJ4nZ/instagram-clone-collab and ensure that the directory of the project resides in xampp/htdocs
 
 in VS Code terminal run
 ```bash
@@ -28,7 +28,7 @@ npm install
 ```
 composer update
 ```
--Start Apache server and MySQL from xampp and ensure that there is a database created in MySQL named 'Laravel'
+-Start Apache server and MySQL from xampp and ensure that there is a database created in MySQL named 'laravel'
 
 Run database migrations in terminal
 ```
