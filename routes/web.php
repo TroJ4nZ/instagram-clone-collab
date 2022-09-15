@@ -35,4 +35,4 @@ Route::put('users/profile/', [UserController::class, 'update'])->middleware('aut
 
 Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::get('posts', [PostController::class, 'store'])->name('posts.store');
+Route::post('posts', [PostController::class, 'store'])->name('posts.store');

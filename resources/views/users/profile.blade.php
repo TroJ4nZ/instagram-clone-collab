@@ -11,8 +11,10 @@
 
         </div>
         <div class="col-9 p-5">
-            <div>
+            <div class="d-flex">
                 <h1>{{ $user->username}}</h1>
+
+                <button class="btn btn-primary  ms-4">Follow</button>
             </div>
             <div class="d-flex">
 
