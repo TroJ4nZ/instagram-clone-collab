@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,7 +20,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex" href="{{ url('/dashboard') }}">
                 <div><img src="/svg/Instagramlogo.svg" style="height: 25px ; border-right:1px solid #333333 ;" class="pe-3"></div>
                 <div class="ps-3">Instagram</div>
                 </a>
@@ -55,7 +55,18 @@
                                     {{ Auth::user()->username }}
                                 </a>
 
+
+
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('users.profile') }}">
+                                        {{ "Profile" }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -66,7 +77,14 @@
                                         @csrf
                                     </form>
                                 </div>
+
                             </li>
+
+
+
+
+
+
                         @endguest
                     </ul>
                 </div>

@@ -1,11 +1,10 @@
 @extends('layouts.app')
-@php
-    // dd(Storage::disk('public')->url($user->profile->image));
-@endphp
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
+            {{-- We must add the port number to the env file for Storage to work properly--}}
             <img src="{{Storage::disk('public')->url($user->profile->image)}}" class="rounded-circle" style="height: 250px;" alt="Profile Image">
 
 
