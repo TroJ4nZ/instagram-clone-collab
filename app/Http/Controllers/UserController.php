@@ -12,11 +12,11 @@ class UserController extends Controller
     {
         // $user = User::find($user);
 
-        return view('users/profile')->with(['user' => Auth::user()]);
+        return view('users.profile')->with(['user' => Auth::user()]);
     }
 
     public function edit(User $user){
-        return view('users.edit',compact('user'));
+        return view('users.edit')->with(['user' => Auth::user()]);
     }
 
     public function update(User $user){
@@ -27,7 +27,7 @@ class UserController extends Controller
             'image'=>'',
 
         ]);
-        $user->progile->update($data);
+        $user->profile->update($data);
 
         return redirect("/profile/{ $users->id}");
     }

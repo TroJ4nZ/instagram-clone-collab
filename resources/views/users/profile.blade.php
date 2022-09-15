@@ -19,7 +19,7 @@
                 <div class="pe-5"><strong>1k</strong> Followers</div>
                 <div class="pe-5"><strong>300</strong> Following</div>
             </div>
-            
+
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div> {{ $user->profile->bio }}</div>
             <div><a href="#">{{ $user->profile->website }}</a></div>
@@ -27,11 +27,11 @@
 
             <div class="d-flex p-4">
                 <div>
-            <a href="" title= 'edit' ><botton class=" pe-5 btn btn-success btn-sm " style="background-color: #555555;"> Edit profile </botton></a>
+            <a href="{{route('profile.edit')}}" title= 'edit' ><botton class=" pe-5 btn btn-success btn-sm " style="background-color: #555555;"> Edit profile </botton></a>
             </div>
-            
+
             <div class="ps-5">
-            <a href="" title= 'create' ><botton class="btn btn-success btn-sm pe-5" style="background-color: #555555;"> Create Post</botton></a>
+            <a href="{{route('posts.create')}}" title= 'create' ><botton class="btn btn-success btn-sm pe-5" style="background-color: #555555;"> Create Post</botton></a>
             </div>
             </div>
 

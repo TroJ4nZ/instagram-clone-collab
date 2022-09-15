@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,9 @@ require __DIR__ . '/auth.php';
 Auth::routes();
 
 Route::get('users/profile/', [UserController::class, 'profile'])->middleware('auth')->name('users.profile');
-Route::get('users/profile/{user}/edit', [UserController::class, 'edit'])->name('profile.edit');
+Route::get('users/profile/edit', [UserController::class, 'edit'])->middleware('auth')->name('profile.edit');
+
+
+Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('posts', [PostController::class, 'store'])->name('posts.store');
